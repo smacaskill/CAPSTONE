@@ -1,11 +1,17 @@
-Need to form a task list VERY IMPORTANT
-Ideas for each webpage, what they will do and what we can use them for.
+Need to form a task list VERY IMPORTANT - need by end of week Feb. 7
 
-ASP.net/Javascript/HTML/CSS
-MS SQL
+Ideas for each webpage, what they will do and what we can use them for. - Would like by end of week Feb. 7
+
+Less concerned about other documentation (if it takes longer no problem).
+
+Prioritize functioning features and program over perfect documentation.
+
+ASP.net/Javascript/HTML/CSS for front end
+MS SQL for back end
 
 agile iteration plan means what features will be fully deployed by which iteration point.
 
 Transition portion means finalizing documentation to go along with the program (How to use, readme files etc...)
 
 Potentially standard meeting days mondays and wednesday
+
