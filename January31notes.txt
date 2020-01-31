@@ -1,0 +1,11 @@
+Need to form a task list VERY IMPORTANT
+Ideas for each webpage, what they will do and what we can use them for.
+
+ASP.net/Javascript/HTML/CSS
+MS SQL
+
+agile iteration plan means what features will be fully deployed by which iteration point.
+
+Transition portion means finalizing documentation to go along with the program (How to use, readme files etc...)
+
+Potentially standard meeting days mondays and wednesday
