@@ -11,3 +11,7 @@ Reviewed inception documentation with the following results/requests:
 - Looking for frequent Agile Deliverables, specifically at the week 6 and 9 marks.
 
 - Team charter was good, IP contracts were good.
+
+- Need 2-3 more use cases
+
+- Update response times on project charter.
