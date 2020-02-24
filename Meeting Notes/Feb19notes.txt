@@ -1,0 +1,15 @@
+Zoho inventory management system - good example to use
+
+Discussed Database tables, need to introduce some sort of transaction table, a way for inventory to leave the individual stores
+
+Add email field to employee table which can be used as a unique identifier
+
+Reviewed first 2 Use Case Descriptions
+
+For import bulk data, make sure to include some sort of error checking and feedback (Read 10 skus, imported 8).
+
+Goal is to have Add user page working by next meeting, not necessarily design side but functionality should be there.
+
+Discussed Statechart diagrams and how they are applied/how they work, typically follows a use case thought a use case.
+
+Need to review remaining Inception materials at next meeting.

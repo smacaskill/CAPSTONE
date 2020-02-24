@@ -1,0 +1,17 @@
+Reviewed inception documentation with the following results/requests:
+
+- Project plan needs to be refined with number of days for each item (i.e. 3 days for Use Cases)
+
+- Project Plan needs to include specific Agile Deliverables by which Iteration (i.e. Admin pages by iteration 2)
+
+- Project Charter needs specifications of technologies (MS SQL Server 2016, ASP.Net Core 2.2)
+
+- Project needs to be essentially done by Week 12 as we enter Transition phase.
+
+- Looking for frequent Agile Deliverables, specifically at the week 6 and 9 marks.
+
+- Team charter was good, IP contracts were good.
+
+- Need 2-3 more use cases
+
+- Update response times on project charter.
