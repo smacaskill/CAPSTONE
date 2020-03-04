@@ -4,7 +4,9 @@ Put together client letter for iteration 1.
 
 Add 2 use case descriptions to project plan for iteration 2. 
 
-Define deliverables for Iteration 2 (Pages that will be complete i.e. product page, store page, store inventory report page, possibly product report with stores available stock)
+Define deliverables for Iteration 2 (Pages that will be complete i.e. product page, store page, possibly store inventory report page)
 
 Project Plan essentially functions as a Agile backlog as long as we are updating project plan with specific tasks for each iteration.
+
+
 

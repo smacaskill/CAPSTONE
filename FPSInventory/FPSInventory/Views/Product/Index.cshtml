@@ -1,0 +1,58 @@
+﻿@model IEnumerable<FPSInventory.Models.Product>
+
+@{
+    ViewData["Title"] = "All Products on File";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<p>
+    
+    <ul>
+        <li><a asp-area="" asp-controller="Category" asp-action="Index">Categories</a></li>
+        <li><a asp-area="">Search</a></li>
+
+    </ul>
+    
+
+    <br />
+    <a asp-action="Create">Create New</a>
+    <br />
+
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Idproduct)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Product1)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IdCategoryNavigation)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Idproduct)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Product1)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IdCategoryNavigation.Namecategory)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Idproduct">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.Idproduct">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.Idproduct">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
