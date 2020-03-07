@@ -42,6 +42,7 @@ namespace FPSInventory.Models
         [Required]
         [Display(Name = "Description")]
         public string Product1 { get; set; }
+        [Required]
         [Display(Name = "Category")]
         public int IdCategory { get; set; }
     }
