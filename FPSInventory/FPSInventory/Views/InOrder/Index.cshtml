@@ -1,0 +1,53 @@
+﻿@model IEnumerable<FPSInventory.Models.InOrder>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Date)
+            </th>
+            <th>
+                Created By
+            </th>
+            <th>
+                Shipped With
+            </th>
+            <th>
+                Supplier
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Date)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IdEmployeeNavigation.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IdShippingCompanyNavigation.Namecompany)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IdSupplierNavigation.Namesupplier)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.IdinOrder">Edit</a> |
+                <a asp-action="Index" asp-controller="InItemOrder" asp-route-id="@item.IdinOrder">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.IdinOrder">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

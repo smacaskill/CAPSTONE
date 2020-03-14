@@ -32,8 +32,11 @@ namespace FPSInventory.Controllers
                 return NotFound();
             }
 
-            var category = await _context.Category
-                .FirstOrDefaultAsync(m => m.Idcategory == id);
+            var category = await _context.Product.FirstOrDefaultAsync(m => m.IdCategory == id);
+
+
+            //var category = await _context.Category
+              //  .FirstOrDefaultAsync(m => m.Idcategory == id);
             if (category == null)
             {
                 return NotFound();

@@ -61,6 +61,7 @@
                 </li>
                 <li><a asp-area="" asp-controller="Employee" asp-action="Index">Employees</a></li>
                 <li><a asp-area="" asp-controller="Product" asp-action="Index">Products</a></li>
+                <li><a asp-area="" asp-controller="Store" asp-action="Index">Stores</a></li>
                 <partial name="_LoginPartial" />
             </ul>
         </nav>
@@ -69,21 +70,18 @@
     <section id="page">
         <partial name="_CookieConsentPartial" />
         <aside id="sidebarA">
-            <h2>Lorem Sidebar</h2>
+            <h2>Quick Links</h2>
             <div class="line"></div>
-            <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                Sed vulputate mi sit amet mauris commodo quis imperdiet
-                massa. Egestas congue quisque egestas diam. Posuere urna nec
-                tincidunt praesent. Aenean sed adipiscing diam donec
-                adipiscing tristique risus nec feugiat. Cras adipiscing
-                enim eu turpis egestas pretium aenean pharetra magna.
-                Vulputate sapien nec sagittis aliquam malesuada bibendum.
-                Sem et tortor consequat id porta nibh. Nam libero justo
-                laoreet sit amet cursus sit amet. Arcu cursus vitae congue
-                mauris rhoncus aenean vel.
-            </p>
+            <ul>
+                <li><a asp-area="" asp-controller="Supplier" asp-action="Index">Suppliers</a></li>
+                <li><a asp-area="" asp-controller="ShippingCompany" asp-action="Index">Shipping Companies</a></li>
+                <li><a asp-area="" asp-controller="City" asp-action="Index">Cities</a></li>
+                <li><a asp-area="" asp-controller="Category" asp-action="Index">Categories</a></li>
+                <li><a asp-area="" asp-controller="InOrder" asp-action="Index">Incoming Orders</a></li>
+                <li><a asp-area="" asp-controller="OutOrder" asp-action="Index">Outgoing Orders</a></li>
+                <li><a asp-area="" asp-controller="CustomerOrder" asp-action="Index">Sales</a></li>
+
+            </ul>
         </aside>
         <main id="twocolumns">
             @RenderBody()

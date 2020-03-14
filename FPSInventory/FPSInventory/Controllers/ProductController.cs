@@ -19,10 +19,19 @@ namespace FPSInventory.Controllers
         }
 
         // GET: Product
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(int id = 0)
         {
+            if (id != 0)
+            {
+                var productContext = _context.Product.Where(a => a.IdCategory == id);
+
+                return View(await productContext.ToListAsync());
+            }
+
             var inventoryContext = _context.Product.Include(p => p.IdCategoryNavigation);
+            
             return View(await inventoryContext.ToListAsync());
+
         }
 
         // GET: Product/Details/5

@@ -62,6 +62,7 @@ namespace FPSInventory.Models
 
     public class EmployeeMetadata
     {
+        [Display(Name = "Employee #")]
         public int Idemployee { get; set; }
         [Required]
         [Display(Name = "Full Name")]
