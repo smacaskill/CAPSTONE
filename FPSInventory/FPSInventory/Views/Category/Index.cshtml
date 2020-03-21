@@ -9,7 +9,7 @@
 <p>
     <a asp-action="Create">Create New</a>
 </p>
-<table class="table">
+<table id="tableFPS">
     <thead>
         <tr>
             <th>
@@ -22,7 +22,7 @@
 @foreach (var item in Model) {
         <tr>
             <td>
-                <a asp-action="Index" asp-controller="Product" asp-route-id="@item.Idcategory">
+                <a asp-action="Index" asp-controller="Product" asp-route-categoryId="@item.Idcategory">
                     @Html.DisplayFor(modelItem => item.Namecategory)
                 </a> 
 

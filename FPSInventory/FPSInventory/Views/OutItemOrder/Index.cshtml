@@ -9,7 +9,7 @@
 <p>
     <a asp-action="Create">Create New</a>
 </p>
-<table class="table">
+<table id="tableFPS">
     <thead>
         <tr>
             <th>
@@ -40,7 +40,7 @@
                 @Html.DisplayFor(modelItem => item.IdOutorderNavigation.IdoutOrder)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.IdProductNavigation.Idproduct)
+                @Html.DisplayFor(modelItem => item.IdProductNavigation.Product1)
             </td>
             <td>
                 <a asp-action="Edit" asp-route-id="@item.IdoutItemOrder">Edit</a> |

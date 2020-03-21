@@ -1,28 +1,27 @@
 ﻿@model FPSInventory.Models.OutOrder
 
 @{
-    ViewData["Title"] = "Create";
+    ViewData["Title"] = "Create a New Out Order";
 }
 
-<h1>Create</h1>
-
-<h4>OutOrder</h4>
-<hr />
+<h1>@ViewData["Title"]</h1>
+<div class="line"></div>
+<h4>Out Order</h4>
 <div class="row">
     <div class="col-md-4">
         <form asp-action="Create">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
                 <label asp-for="IdShippingCompany" class="control-label"></label>
-                <select asp-for="IdShippingCompany" class ="form-control" asp-items="ViewBag.IdShippingCompany"></select>
+                <select asp-for="IdShippingCompany" class="form-control" asp-items="ViewBag.IdShippingCompany"></select>
             </div>
             <div class="form-group">
                 <label asp-for="IdStore" class="control-label"></label>
-                <select asp-for="IdStore" class ="form-control" asp-items="ViewBag.IdStore"></select>
+                <select asp-for="IdStore" class="form-control" asp-items="ViewBag.IdStore"></select>
             </div>
             <div class="form-group">
                 <label asp-for="IdEmployee" class="control-label"></label>
-                <select asp-for="IdEmployee" class ="form-control" asp-items="ViewBag.IdEmployee"></select>
+                <select asp-for="IdEmployee" class="form-control" asp-items="ViewBag.IdEmployee"></select>
             </div>
             <div class="form-group">
                 <label asp-for="Date" class="control-label"></label>
@@ -37,7 +36,7 @@
 </div>
 
 <div>
-    <a asp-action="Index">Back to List</a>
+    <a asp-action="Index" style="color:white;">Back to List</a>
 </div>
 
 @section Scripts {

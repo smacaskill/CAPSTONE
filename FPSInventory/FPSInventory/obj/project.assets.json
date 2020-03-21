@@ -12943,11 +12943,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\CAPSTONE\\FPSInventory\\FPSInventory\\FPSInventory.csproj",
+      "projectUniqueName": "C:\\Users\\SandersLP\\Desktop\\FPSInventory\\FPSInventory\\FPSInventory.csproj",
       "projectName": "FPSInventory",
-      "projectPath": "E:\\CAPSTONE\\FPSInventory\\FPSInventory\\FPSInventory.csproj",
+      "projectPath": "C:\\Users\\SandersLP\\Desktop\\FPSInventory\\FPSInventory\\FPSInventory.csproj",
       "packagesPath": "C:\\Users\\SandersLP\\.nuget\\packages\\",
-      "outputPath": "E:\\CAPSTONE\\FPSInventory\\FPSInventory\\obj\\",
+      "outputPath": "C:\\Users\\SandersLP\\Desktop\\FPSInventory\\FPSInventory\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

@@ -27,7 +27,6 @@ namespace FPSInventory.Controllers
                     .Include(c => c.IdCustomerOrderNavigation)
                     .Include(c => c.IdProductNavigation)
                     .Where(c => c.IdCustomerOrder == id);
-
                 return View(await productContext.ToListAsync());
 
             }

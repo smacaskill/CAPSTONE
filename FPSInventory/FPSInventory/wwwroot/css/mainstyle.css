@@ -1,4 +1,4 @@
-﻿/*Some images are not mine. Please check the Major Assignment 2 word document for more info.*/
+﻿﻿/*Some images are not mine. Please check the Major Assignment 2 word document for more info.*/
 * {
   /* Universal reset: */
   margin: 0;
@@ -57,7 +57,9 @@ header {
   font-weight: bold;
   background-color: #FFFFFF;
   color: black;
-  padding: 10px;
+  padding-top: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
   position: relative;
 }
 
@@ -71,7 +73,6 @@ body {
 
 p {
   line-height: 1.5em;
-  padding-bottom: 1em;
   font-family: 'Open Sans', Arial, Arial, Arial;
 }
 
@@ -255,28 +256,33 @@ nav {
   /*ALL*/
   background: rgba(0, 0, 0, 0.7);
   margin-bottom: 2em;
-  margin-left: 10px;
 }
 
 #sidebarA h2 {
   color: #FFFFFF;
   margin-bottom: 10px;
   text-transform: uppercase;
+  font-size:1.7em;
 }
 
 #sidebarA p,
 #sidebarA a {
-  font-size: 1em !important;
+  font-size: 1.2em !important;
 }
 
 #sidebarA a:link,
 #sidebarA a:visited {
-  color: white;
+    color: white;
 }
 
 #sidebarA a:hover,
 #sidebarA a:focus {
   color: #FF8F33;
+}
+
+#sidebarA ul{
+    list-style-type: disc;
+    padding-left: 15px;
 }
 
 /*the MAIN content*/
@@ -376,10 +382,11 @@ main p {
 
 /*Section+Page Parts*/
 #page {
-  width: 1200px;
+  width: 100%;
   min-height: 100vh;
   margin: 0 auto;
   position: relative;
+  padding: 10px;
 }
 
 #threecolumns {
@@ -389,7 +396,8 @@ main p {
 }
 
 #twocolumns {
-  width: 927px;
+  max-width: 100%;
+  min-width:1200px;
   margin-left: 10px;
   float: left;
 }
@@ -435,6 +443,16 @@ footer .line {
   margin-top: 5px;
 }
 
-.white {
+a.white {
+    color: white;
+}
+
+.normal-ul {
+    list-style-type: disc;
+    padding-left: 14px;
+    padding-top:0;
+}
+
+.normal-ul li a {
     color: white;
 }

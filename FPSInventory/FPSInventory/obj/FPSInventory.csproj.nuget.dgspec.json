@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Jem\\Desktop\\ProjDev\\FPSInventory\\FPSInventory\\FPSInventory.csproj": {}
+    "C:\\Users\\Jem\\Desktop\\TerBack\\FPSInventory\\FPSInventory\\FPSInventory.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Jem\\Desktop\\ProjDev\\FPSInventory\\FPSInventory\\FPSInventory.csproj": {
+    "C:\\Users\\Jem\\Desktop\\TerBack\\FPSInventory\\FPSInventory\\FPSInventory.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Jem\\Desktop\\ProjDev\\FPSInventory\\FPSInventory\\FPSInventory.csproj",
+        "projectUniqueName": "C:\\Users\\Jem\\Desktop\\TerBack\\FPSInventory\\FPSInventory\\FPSInventory.csproj",
         "projectName": "FPSInventory",
-        "projectPath": "C:\\Users\\Jem\\Desktop\\ProjDev\\FPSInventory\\FPSInventory\\FPSInventory.csproj",
+        "projectPath": "C:\\Users\\Jem\\Desktop\\TerBack\\FPSInventory\\FPSInventory\\FPSInventory.csproj",
         "packagesPath": "C:\\Users\\Jem\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Jem\\Desktop\\ProjDev\\FPSInventory\\FPSInventory\\obj\\",
+        "outputPath": "C:\\Users\\Jem\\Desktop\\TerBack\\FPSInventory\\FPSInventory\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

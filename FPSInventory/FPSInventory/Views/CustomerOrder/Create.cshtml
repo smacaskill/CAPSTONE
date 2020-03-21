@@ -1,13 +1,12 @@
 ﻿@model FPSInventory.Models.CustomerOrder
 
 @{
-    ViewData["Title"] = "Create";
+    ViewData["Title"] = "Create a New Custom Order";
 }
 
-<h1>Create</h1>
-
-<h4>CustomerOrder</h4>
-<hr />
+<h1>@ViewData["Title"]</h1>
+<div class="line"></div>
+<h4>Customer Order</h4>
 <div class="row">
     <div class="col-md-4">
         <form asp-action="Create">
@@ -29,7 +28,7 @@
 </div>
 
 <div>
-    <a asp-action="Index">Back to List</a>
+    <a asp-action="Index" class="white">Back to List</a>
 </div>
 
 @section Scripts {

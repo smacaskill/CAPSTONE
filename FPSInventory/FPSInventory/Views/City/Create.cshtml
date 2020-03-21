@@ -1,13 +1,12 @@
 ﻿@model FPSInventory.Models.City
 
 @{
-    ViewData["Title"] = "Create";
+    ViewData["Title"] = "Add a New City";
 }
 
-<h1>Create</h1>
-
+<h1>@ViewData["Title"]</h1>
+<div class="line"></div>
 <h4>City</h4>
-<hr />
 <div class="row">
     <div class="col-md-4">
         <form asp-action="Create">
@@ -30,7 +29,7 @@
 </div>
 
 <div>
-    <a asp-action="Index">Back to List</a>
+    <a asp-action="Index" class="white">Back to List</a>
 </div>
 
 @section Scripts {
