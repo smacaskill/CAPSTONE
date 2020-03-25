@@ -5,11 +5,11 @@
 }
 
 <h1>Index</h1>
-
+<div class="line"></div>
 <p>
     <a asp-action="Create">Create New</a>
 </p>
-<table class="table">
+<table id="tableFPS">
     <thead>
         <tr>
             <th>
@@ -42,7 +42,7 @@
             <td>
                 @Html.DisplayFor(modelItem => item.IdCityNavigation.Namecity)
             </td>
-            <td>
+            <td class="white">
                 <a asp-action="Edit" asp-route-id="@item.IdshippingCompany">Edit</a> |
                 <a asp-action="Details" asp-route-id="@item.IdshippingCompany">Details</a> |
                 <a asp-action="Delete" asp-route-id="@item.IdshippingCompany">Delete</a>

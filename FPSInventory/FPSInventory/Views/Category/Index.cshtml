@@ -5,7 +5,7 @@
 }
 
 <h1>@ViewData["Title"]</h1>
-
+<div class="line"></div>
 <p>
     <a asp-action="Create">Create New</a>
 </p>
@@ -22,7 +22,7 @@
 @foreach (var item in Model) {
         <tr>
             <td>
-                <a asp-action="Index" asp-controller="Product" asp-route-categoryId="@item.Idcategory">
+                <a asp-action="Index" asp-controller="Product" asp-route-id="@item.Idcategory">
                     @Html.DisplayFor(modelItem => item.Namecategory)
                 </a> 
 

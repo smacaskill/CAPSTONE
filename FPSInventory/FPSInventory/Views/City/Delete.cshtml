@@ -5,11 +5,10 @@
 }
 
 <h1>Delete</h1>
-
+<div class="line"></div>
 <h3>Are you sure you want to delete this?</h3>
 <div>
     <h4>City</h4>
-    <hr />
     <dl class="row">
         <dt class = "col-sm-2">
             @Html.DisplayNameFor(model => model.Namecity)
@@ -28,6 +27,6 @@
     <form asp-action="Delete">
         <input type="hidden" asp-for="Idcity" />
         <input type="submit" value="Delete" class="btn btn-danger" /> |
-        <a asp-action="Index" class="white">Back to List</a>
+        <a asp-action="Index" class="white">&leftarrow; Back to List</a>
     </form>
 </div>

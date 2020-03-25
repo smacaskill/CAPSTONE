@@ -5,7 +5,7 @@
 }
 
 <h1>Index</h1>
-
+<div class="line"></div>
 <p>
     <a asp-action="Create">Create New</a>
 </p>
@@ -43,7 +43,6 @@
                 @Html.DisplayFor(modelItem => item.IdCityNavigation.Namecity)
             </td>
             <td>
-                <!--<a asp-action="Index" asp-controller="Product" asp-route-storeId="@item.Idstore">Inventory</a> |-->
                 <a asp-action="Edit" asp-route-id="@item.Idstore">Edit</a> |
                 <a asp-action="Details" asp-route-id="@item.Idstore">Details</a> |
                 <a asp-action="Delete" asp-route-id="@item.Idstore">Delete</a>

@@ -19,37 +19,14 @@ namespace FPSInventory.Controllers
         }
 
         // GET: Product
-        public async Task<IActionResult> Index(int categoryId = 0, int storeId = 0)
+        public async Task<IActionResult> Index(int id = 0)
         {
-            if (categoryId != 0)
+            if (id != 0)
             {
-                var productContext = _context.Product.Where(a => a.IdCategory == categoryId);
+                var productContext = _context.Product.Where(a => a.IdCategory == id);
 
                 return View(await productContext.ToListAsync());
             }
-            //else if (storeId != 0)
-            //{
-            //    var inOrders = _context.OutOrder.Where(a => a.IdStore == storeId);
-
-            //    int storeQuantity = 0;
-
-            //    foreach (var order in inOrders)
-            //    {
-            //        var lineItems = _context.OutItemOrder
-            //            .Where(a => a.IdOutorder == order.IdoutOrder)
-
-            //        foreach (var item in lineItems)
-            //        {
-            //            storeQuantity += item.Quantity;
-            //            averagePrice += item.Price * item.Quantity;
-            //        }
-            //    }
-
-
-            //    var productContext = _context.Product.Where(a => a.IdCategory == categoryId);
-
-            //    return View(await productContext.ToListAsync());
-            //}
 
             var inventoryContext = _context.Product.Include(p => p.IdCategoryNavigation);
             

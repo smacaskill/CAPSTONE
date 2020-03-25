@@ -1,0 +1,5 @@
+review requirements tab and project charter to determine what is left for requirements.
+
+Reviewed some UI developments/changes.
+
+Looking for some sort of login for user/admin to differentiate roles and presentation of the web pages (user would be locked out from some pages).

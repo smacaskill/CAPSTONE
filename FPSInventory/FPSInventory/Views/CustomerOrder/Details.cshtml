@@ -5,10 +5,9 @@
 }
 
 <h1>Details</h1>
-
+<div class="line"></div>
 <div>
     <h4>CustomerOrder</h4>
-    <hr />
     <dl class="row">
         <dt class = "col-sm-2">
             @Html.DisplayNameFor(model => model.Date)
@@ -25,6 +24,6 @@
     </dl>
 </div>
 <div>
-    <a asp-action="Edit" asp-route-id="@Model.IdcustomerOrder">Edit</a> |
-    <a asp-action="Index" class="white">Back to List</a>
+    <a asp-action="Edit" asp-route-id="@Model.IdcustomerOrder" class="white">Edit</a> |
+    <a asp-action="Index" class="white">&leftarrow; Back to List</a>
 </div>
