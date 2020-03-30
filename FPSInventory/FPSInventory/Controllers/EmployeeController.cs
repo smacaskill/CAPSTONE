@@ -20,8 +20,42 @@ namespace FPSInventory.Controllers
         }
 
         // GET: Employee
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(int Idemployee = 0)
         {
+            if (Idemployee != 0)
+            {
+                var employee = _context.Employee.FirstOrDefault(a => a.Idemployee == Idemployee);
+
+                if (employee == null)
+                {
+                    TempData["message"] = "That Employee is not on file";
+                    return Redirect("/Home");
+                }
+                else
+                {
+                    HttpContext.Session.SetString("Idemployee", Idemployee.ToString());
+                    HttpContext.Session.SetString("employeeName", employee.Name);
+                    TempData["Message"] = "Thank you " + employee.Name + " for logging in";
+                    return Redirect("/Home");
+                }
+            }
+            else if (HttpContext.Session.GetString(nameof(Idemployee)) != null)
+            {
+                Idemployee = int.Parse(HttpContext.Session.GetString(nameof(Idemployee)));
+                var employee = _context.Employee.FirstOrDefault(a => a.Idemployee == Idemployee);
+
+                if (employee.Role == "USER")
+                {
+                    TempData["message"] = "You are not authorized to access the Employee page";
+                    return Redirect("/Home");
+                }
+            }
+            else
+            {
+                TempData["Message"] = "You must login first";
+                return Redirect("/Home");
+            }
+
             return View(await _context.Employee.ToListAsync());
         }
 

@@ -37,9 +37,9 @@
                 @Html.DisplayFor(modelItem => item.IdCityNavigation.Namecity)
             </td>
             <td>
-                <a asp-action="Edit" asp-route-id="@item.Idsupplier">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.Idsupplier">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.Idsupplier">Delete</a>
+                <a asp-action="Edit" asp-route-id="@item.Idsupplier" class="btn btn-success btn-sm" role="button">Edit</a>
+                <a asp-action="Details" asp-route-id="@item.Idsupplier" class="btn btn-info btn-sm" role="button">Details</a>
+                <a asp-action="Delete" asp-route-id="@item.Idsupplier" class="btn btn-danger btn-sm" role="button">Delete</a>
             </td>
         </tr>
 }

@@ -38,7 +38,7 @@ namespace FPSInventory.Models
                 yield return new ValidationResult("Email cannot be longer than 50 Characters",
                         new[] { nameof(Email) });
 
-             else if (!validEmail.IsMatch(Email))
+            else if (!validEmail.IsMatch(Email))
                 yield return new ValidationResult("That is not a valid Email, use format \"aaa@yahoo.ca\"",
                         new[] { nameof(Email) });
 

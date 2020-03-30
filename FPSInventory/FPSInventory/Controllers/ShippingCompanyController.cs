@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using FPSInventory.Models;
+using Microsoft.AspNetCore.Http;
 
 namespace FPSInventory.Controllers
 {
@@ -142,8 +143,20 @@ namespace FPSInventory.Controllers
         }
 
         // GET: ShippingCompany/Delete/5
-        public async Task<IActionResult> Delete(int? id)
+        public async Task<IActionResult> Delete(int? id, int Idemployee = 0)
         {
+            if (HttpContext.Session.GetString(nameof(Idemployee)) != null)
+            {
+                Idemployee = int.Parse(HttpContext.Session.GetString(nameof(Idemployee)));
+                var employee = _context.Employee.FirstOrDefault(a => a.Idemployee == Idemployee);
+
+
+                if (employee.Role == "USER")
+                {
+                    TempData["message"] = "You are not authorized to Delete Shipping Companies";
+                    return Redirect("/Home");
+                }
+            }
             if (id == null)
             {
                 return NotFound();

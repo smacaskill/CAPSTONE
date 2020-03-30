@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using FPSInventory.Models;
+using Microsoft.AspNetCore.Http;
 
 namespace FPSInventory.Controllers
 {
@@ -65,8 +66,21 @@ namespace FPSInventory.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Idproduct,Product1,IdCategory")] Product product)
+        public async Task<IActionResult> Create([Bind("Idproduct,Product1,IdCategory")] Product product, int Idemployee = 0)
         {
+            if (HttpContext.Session.GetString(nameof(Idemployee)) != null)
+            {
+                Idemployee = int.Parse(HttpContext.Session.GetString(nameof(Idemployee)));
+                var employee = _context.Employee.FirstOrDefault(a => a.Idemployee == Idemployee);
+
+
+                if (employee.Role == "USER")
+                {
+                    TempData["message"] = "You are not authorized to Add Products";
+                    return Redirect("/Home");
+                }
+            }
+
             if (ModelState.IsValid)
             {
                 _context.Add(product);
@@ -131,8 +145,20 @@ namespace FPSInventory.Controllers
         }
 
         // GET: Product/Delete/5
-        public async Task<IActionResult> Delete(int? id)
+        public async Task<IActionResult> Delete(int? id, int Idemployee = 0)
         {
+            if (HttpContext.Session.GetString(nameof(Idemployee)) != null)
+            {
+                Idemployee = int.Parse(HttpContext.Session.GetString(nameof(Idemployee)));
+                var employee = _context.Employee.FirstOrDefault(a => a.Idemployee == Idemployee);
+
+
+                if (employee.Role == "USER")
+                {
+                    TempData["message"] = "You are not authorized to Delete Products";
+                    return Redirect("/Home");
+                }
+            }
             if (id == null)
             {
                 return NotFound();

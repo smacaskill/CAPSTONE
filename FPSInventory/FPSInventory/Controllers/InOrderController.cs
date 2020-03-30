@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using FPSInventory.Models;
+using Microsoft.AspNetCore.Http;
 
 namespace FPSInventory.Controllers
 {
@@ -19,8 +20,19 @@ namespace FPSInventory.Controllers
         }
 
         // GET: InOrder
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(int Idemployee = 0)
         {
+            if (HttpContext.Session.GetString(nameof(Idemployee)) != null)
+            {
+                Idemployee = int.Parse(HttpContext.Session.GetString(nameof(Idemployee)));
+                var employee = _context.Employee.FirstOrDefault(a => a.Idemployee == Idemployee);
+
+            }
+            else
+            {
+                TempData["message"] = "You must login to view the Incoming Orders page";
+                return Redirect("/Home");
+            }
             var inventoryContext = _context.InOrder.Include(i => i.IdEmployeeNavigation).Include(i => i.IdShippingCompanyNavigation).Include(i => i.IdSupplierNavigation);
             return View(await inventoryContext.ToListAsync());
         }
@@ -66,7 +78,7 @@ namespace FPSInventory.Controllers
             {
                 _context.Add(inOrder);
                 await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
+                return Redirect("/InItemOrder");
             }
             ViewData["IdEmployee"] = new SelectList(_context.Employee, "Idemployee", "Name", inOrder.IdEmployee);
             ViewData["IdShippingCompany"] = new SelectList(_context.ShippingCompany, "IdshippingCompany", "Namecompany", inOrder.IdShippingCompany);
@@ -132,8 +144,21 @@ namespace FPSInventory.Controllers
         }
 
         // GET: InOrder/Delete/5
-        public async Task<IActionResult> Delete(int? id)
+        public async Task<IActionResult> Delete(int? id, int Idemployee = 0)
         {
+            if (HttpContext.Session.GetString(nameof(Idemployee)) != null)
+            {
+                Idemployee = int.Parse(HttpContext.Session.GetString(nameof(Idemployee)));
+                var employee = _context.Employee.FirstOrDefault(a => a.Idemployee == Idemployee);
+
+
+                if (employee.Role == "USER")
+                {
+                    TempData["message"] = "You are not authorized to Delete orders";
+                    return Redirect("/Home");
+                }
+            }
+            
             if (id == null)
             {
                 return NotFound();

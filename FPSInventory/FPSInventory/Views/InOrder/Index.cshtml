@@ -43,9 +43,9 @@
                 @Html.DisplayFor(modelItem => item.IdSupplierNavigation.Namesupplier)
             </td>
             <td>
-                <a asp-action="Edit" asp-route-id="@item.IdinOrder">Edit</a> |
-                <a asp-action="Index" asp-controller="InItemOrder" asp-route-id="@item.IdinOrder">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.IdinOrder">Delete</a>
+                <a asp-action="Edit" asp-route-id="@item.IdinOrder" class="btn btn-success btn-sm" role="button">Edit</a>
+                <a asp-action="Index" asp-controller="InItemOrder" asp-route-id="@item.IdinOrder" class="btn btn-info btn-sm" role="button">Details</a>
+                <a asp-action="Delete" asp-route-id="@item.IdinOrder" class="btn btn-danger btn-sm" role="button">Delete</a>
             </td>
         </tr>
 }

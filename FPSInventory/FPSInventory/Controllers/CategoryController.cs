@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using FPSInventory.Models;
+using Microsoft.AspNetCore.Http;
 
 namespace FPSInventory.Controllers
 {
@@ -19,8 +20,26 @@ namespace FPSInventory.Controllers
         }
 
         // GET: Category
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(int Idemployee = 0)
         {
+            if (HttpContext.Session.GetString(nameof(Idemployee)) != null)
+            {
+                Idemployee = int.Parse(HttpContext.Session.GetString(nameof(Idemployee)));
+                var employee = _context.Employee.FirstOrDefault(a => a.Idemployee == Idemployee);
+
+
+                if (employee.Role == "USER")
+                {
+                    TempData["message"] = "You are not authorized to access the Category page";
+                    return Redirect("/Home");
+                }
+            }
+            else
+            {
+                TempData["message"] = "You must login to view the Category page";
+                return Redirect("/Home");
+            }
+
             return View(await _context.Category.ToListAsync());
         }
 

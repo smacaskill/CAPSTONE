@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using FPSInventory.Models;
+using Microsoft.AspNetCore.Http;
 
 namespace FPSInventory.Controllers
 {
@@ -19,8 +20,19 @@ namespace FPSInventory.Controllers
         }
 
         // GET: InItemOrder
-        public async Task<IActionResult> Index(int id = 0)
+        public async Task<IActionResult> Index(int id = 0, int Idemployee = 0)
         {
+            if (HttpContext.Session.GetString(nameof(Idemployee)) != null)
+            {
+                Idemployee = int.Parse(HttpContext.Session.GetString(nameof(Idemployee)));
+                var employee = _context.Employee.FirstOrDefault(a => a.Idemployee == Idemployee);
+
+            }
+            else
+            {
+                TempData["message"] = "You must login to view that page";
+                return Redirect("/Home");
+            }
             if (id != 0)
             {
                 var productContext = _context.InItemOrder.Include(a => a.IdProductNavigation).Where(a => a.IdInorder == id);

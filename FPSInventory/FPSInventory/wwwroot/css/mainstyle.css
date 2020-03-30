@@ -94,6 +94,12 @@ a, a:visited {
   outline: none;
 }
 
+a.btn.btn-sm {
+    color: #FFF;
+    border-radius:25px 0;
+    padding: 1px 13px;
+}
+
 /*Headings*/
 hgroup h2 img {
   width: 50px;
@@ -351,10 +357,14 @@ main p {
   width: 100px;
 }
 
-#formFPS label {}
-
 .formClass {
   width: 100%;
+}
+
+span.text-danger {
+    color: red;
+    background-color: white;
+    font-weight: bold;
 }
 
 /*Goes Up*/

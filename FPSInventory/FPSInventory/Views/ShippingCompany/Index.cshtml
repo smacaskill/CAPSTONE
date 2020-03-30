@@ -42,10 +42,10 @@
             <td>
                 @Html.DisplayFor(modelItem => item.IdCityNavigation.Namecity)
             </td>
-            <td class="white">
-                <a asp-action="Edit" asp-route-id="@item.IdshippingCompany">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.IdshippingCompany">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.IdshippingCompany">Delete</a>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.IdshippingCompany" class="btn btn-success btn-sm" role="button">Edit</a>
+                <a asp-action="Details" asp-route-id="@item.IdshippingCompany" class="btn btn-info btn-sm" role="button">Details</a>
+                <a asp-action="Delete" asp-route-id="@item.IdshippingCompany" class="btn btn-danger btn-sm" role="button">Delete</a>
             </td>
         </tr>
 }

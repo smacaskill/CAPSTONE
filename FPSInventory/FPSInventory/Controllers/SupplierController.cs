@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using FPSInventory.Models;
+using Microsoft.AspNetCore.Http;
 
 namespace FPSInventory.Controllers
 {
@@ -19,8 +20,16 @@ namespace FPSInventory.Controllers
         }
 
         // GET: Supplier
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(int Idemployee = 0)
         {
+            if (HttpContext.Session.GetString(nameof(Idemployee)) == null)
+            {
+                
+                    TempData["message"] = "You must login to access the Supplier page";
+                    return Redirect("/Home");
+                
+            }
+
             var inventoryContext = _context.Supplier.Include(s => s.IdCityNavigation);
             return View(await inventoryContext.ToListAsync());
         }
@@ -45,8 +54,20 @@ namespace FPSInventory.Controllers
         }
 
         // GET: Supplier/Create
-        public IActionResult Create()
+        public IActionResult Create(int Idemployee = 0)
         {
+            if (HttpContext.Session.GetString(nameof(Idemployee)) != null)
+            {
+                Idemployee = int.Parse(HttpContext.Session.GetString(nameof(Idemployee)));
+                var employee = _context.Employee.FirstOrDefault(a => a.Idemployee == Idemployee);
+
+
+                if (employee.Role == "USER")
+                {
+                    TempData["message"] = "You are not authorized to Add a new Supplier";
+                    return Redirect("/Home");
+                }
+            }
 
             ViewData["IdCity"] = _context.City
                 .Select(c => new SelectListItem
@@ -143,8 +164,21 @@ namespace FPSInventory.Controllers
         }
 
         // GET: Supplier/Delete/5
-        public async Task<IActionResult> Delete(int? id)
+        public async Task<IActionResult> Delete(int? id, int Idemployee = 0)
         {
+            if (HttpContext.Session.GetString(nameof(Idemployee)) != null)
+            {
+                Idemployee = int.Parse(HttpContext.Session.GetString(nameof(Idemployee)));
+                var employee = _context.Employee.FirstOrDefault(a => a.Idemployee == Idemployee);
+
+
+                if (employee.Role == "USER")
+                {
+                    TempData["message"] = "You are not authorized to Delete a Supplier";
+                    return Redirect("/Home");
+                }
+            }
+
             if (id == null)
             {
                 return NotFound();

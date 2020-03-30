@@ -1,0 +1,5 @@
+Change login page once user has logged in, should disappear login option.
+
+Focus on reports next, ideally want a report of a store's inventory and a user entered date range that returns orders that fall within that range.
+
+Review various diagrams, mainly ERD and system sequence diagrams.
