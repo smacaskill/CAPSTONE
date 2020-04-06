@@ -22,9 +22,9 @@ namespace FPSInventory.Controllers
         // GET: CustomerOrder
         public async Task<IActionResult> Index(int Idemployee = 0)
         {
-            if (HttpContext.Session.GetString(nameof(Idemployee)) != null)
+            if (HttpContext.Session.GetString("employeeID") != null)
             {
-                Idemployee = int.Parse(HttpContext.Session.GetString(nameof(Idemployee)));
+                Idemployee = int.Parse(HttpContext.Session.GetString("employeeID"));
                 var employee = _context.Employee.FirstOrDefault(a => a.Idemployee == Idemployee);
 
                 
@@ -33,6 +33,24 @@ namespace FPSInventory.Controllers
             {
                 TempData["message"] = "You must login to view the Sales page";
                 return Redirect("/Home");
+            }
+
+            if (HttpContext.Session.GetString("searchStoreId") != null)
+            {
+                int storeId = int.Parse(HttpContext.Session.GetString("searchStoreId"));
+                DateTime fromDate = DateTime.Parse(HttpContext.Session.GetString("searchFromDate"));
+                DateTime toDate = DateTime.Parse(HttpContext.Session.GetString("searchToDate"));
+
+                HttpContext.Session.Remove("searchStoreId");
+                HttpContext.Session.Remove("searchFromDate");
+                HttpContext.Session.Remove("searchToDate");
+
+                var sales = _context.CustomerOrder
+                                .Include(c => c.IdStoreNavigation)
+                                .Where(a => a.IdStore == storeId)
+                                .Where(a => a.Date > fromDate)
+                                .Where(a => a.Date < toDate);
+                return View(await sales.ToListAsync());
             }
 
             var inventoryContext = _context.CustomerOrder.Include(c => c.IdStoreNavigation);

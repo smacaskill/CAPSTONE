@@ -48,9 +48,9 @@ namespace FPSInventory.Controllers
         // GET: Store/Create
         public IActionResult Create(int Idemployee = 0)
         {
-            if (HttpContext.Session.GetString(nameof(Idemployee)) != null)
+            if (HttpContext.Session.GetString("employeeID") != null)
             {
-                Idemployee = int.Parse(HttpContext.Session.GetString(nameof(Idemployee)));
+                Idemployee = int.Parse(HttpContext.Session.GetString("employeeID"));
                 var employee = _context.Employee.FirstOrDefault(a => a.Idemployee == Idemployee);
 
 
@@ -97,9 +97,9 @@ namespace FPSInventory.Controllers
         // GET: Store/Edit/5
         public async Task<IActionResult> Edit(int? id, int Idemployee = 0)
         {
-            if (HttpContext.Session.GetString(nameof(Idemployee)) != null)
+            if (HttpContext.Session.GetString("employeeID") != null)
             {
-                Idemployee = int.Parse(HttpContext.Session.GetString(nameof(Idemployee)));
+                Idemployee = int.Parse(HttpContext.Session.GetString("employeeID"));
                 var employee = _context.Employee.FirstOrDefault(a => a.Idemployee == Idemployee);
 
 
@@ -173,9 +173,9 @@ namespace FPSInventory.Controllers
         // GET: Store/Delete/5
         public async Task<IActionResult> Delete(int? id, int Idemployee = 0)
         {
-            if (HttpContext.Session.GetString(nameof(Idemployee)) != null)
+            if (HttpContext.Session.GetString("employeeID") != null)
             {
-                Idemployee = int.Parse(HttpContext.Session.GetString(nameof(Idemployee)));
+                Idemployee = int.Parse(HttpContext.Session.GetString("employeeID"));
                 var employee = _context.Employee.FirstOrDefault(a => a.Idemployee == Idemployee);
 
 

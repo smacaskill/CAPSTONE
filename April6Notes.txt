@@ -1,0 +1,24 @@
+april 6 notes
+
+Presentation to mentor
+
+Live video presentation - go through the software (explain features)
+
+Dry run this week? Look to have final video uploaded next week. Should be more of a walkthrough instead of a sales pitch
+
+Unit Tests plan for admin and user need done.
+
+Data dictionary needs done. (This week)
+
+Add admin/user to persons name on login screens
+
+
+
+Transition phase (next week):
+
+Tutorial User guide needs done. 
+
+Agile Backlog (project plan tasks)
+
+Agile Release Summary
+

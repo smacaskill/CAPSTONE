@@ -43,9 +43,12 @@
                 @Html.DisplayFor(modelItem => item.IdStoreNavigation.Namestore)
             </td>
             <td>
-                <a asp-action="Edit" asp-route-id="@item.IdoutOrder" class="btn btn-success btn-sm" role="button">Edit</a>
-                <a asp-action="Index" asp-controller="OutItemOrder" asp-route-id="@item.IdoutOrder" class="btn btn-info btn-sm" role="button">Details</a>
-                <a asp-action="Delete" asp-route-id="@item.IdoutOrder" class="btn btn-danger btn-sm" role="button">Delete</a>
+                <a asp-action="Edit" asp-route-id="@item.IdoutOrder"
+                   class="btn btn-success btn-sm" role="button"
+                   title="Edit"><span class="glyphicon glyphicon-edit"></span></a>
+                <a asp-action="Delete" asp-route-id="@item.IdoutOrder"
+                   class="btn btn-danger btn-sm" role="button"
+                   title="Delete File"><span class="glyphicon glyphicon-trash"></span></a>
             </td>
         </tr>
 }

@@ -22,9 +22,9 @@ namespace FPSInventory.Controllers
         // GET: InItemOrder
         public async Task<IActionResult> Index(int id = 0, int Idemployee = 0)
         {
-            if (HttpContext.Session.GetString(nameof(Idemployee)) != null)
+            if (HttpContext.Session.GetString("employeeID") != null)
             {
-                Idemployee = int.Parse(HttpContext.Session.GetString(nameof(Idemployee)));
+                Idemployee = int.Parse(HttpContext.Session.GetString("employeeID"));
                 var employee = _context.Employee.FirstOrDefault(a => a.Idemployee == Idemployee);
 
             }
@@ -40,9 +40,23 @@ namespace FPSInventory.Controllers
                 return View(await productContext.ToListAsync());
             }
 
+            if (HttpContext.Session.GetString("inOrderID") != null)
+            {
+                int inOrderID = int.Parse(HttpContext.Session.GetString("inOrderID"));
+                var productContext = _context.InItemOrder.Include(a => a.IdProductNavigation)
+                                                        .Where(a => a.IdInorder == inOrderID);
+                if (productContext != null)
+                {
+                    return View(await productContext.ToListAsync());
+                }
+                return Redirect("/InItemOrder/Create");
+            }
+
             var inventoryContext = _context.InItemOrder.Include(i => i.IdInorderNavigation).Include(i => i.IdProductNavigation);
             return View(await inventoryContext.ToListAsync());
         }
+
+
 
         // GET: InItemOrder/Details/5
         public async Task<IActionResult> Details(int? id)

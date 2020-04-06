@@ -33,15 +33,15 @@ namespace FPSInventory.Controllers
                 }
                 else
                 {
-                    HttpContext.Session.SetString("Idemployee", Idemployee.ToString());
+                    HttpContext.Session.SetString("employeeID", Idemployee.ToString());
                     HttpContext.Session.SetString("employeeName", employee.Name);
                     TempData["Message"] = "Thank you " + employee.Name + " for logging in";
                     return Redirect("/Home");
                 }
             }
-            else if (HttpContext.Session.GetString(nameof(Idemployee)) != null)
+            else if (HttpContext.Session.GetString("employeeID") != null)
             {
-                Idemployee = int.Parse(HttpContext.Session.GetString(nameof(Idemployee)));
+                Idemployee = int.Parse(HttpContext.Session.GetString("employeeID"));
                 var employee = _context.Employee.FirstOrDefault(a => a.Idemployee == Idemployee);
 
                 if (employee.Role == "USER")
@@ -156,6 +156,7 @@ namespace FPSInventory.Controllers
         // GET: Employee/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
+            
             if (id == null)
             {
                 return NotFound();
@@ -166,6 +167,12 @@ namespace FPSInventory.Controllers
             if (employee == null)
             {
                 return NotFound();
+            }
+
+            if (int.Parse(HttpContext.Session.GetString("employeeID")) == id)
+            {
+                TempData["message"] = "You cannot delete yourself from the system";
+                return Redirect("/Employee");
             }
 
             return View(employee);

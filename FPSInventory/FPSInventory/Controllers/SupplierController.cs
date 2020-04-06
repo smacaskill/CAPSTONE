@@ -22,7 +22,7 @@ namespace FPSInventory.Controllers
         // GET: Supplier
         public async Task<IActionResult> Index(int Idemployee = 0)
         {
-            if (HttpContext.Session.GetString(nameof(Idemployee)) == null)
+            if (HttpContext.Session.GetString("employeeID") == null)
             {
                 
                     TempData["message"] = "You must login to access the Supplier page";
@@ -56,9 +56,9 @@ namespace FPSInventory.Controllers
         // GET: Supplier/Create
         public IActionResult Create(int Idemployee = 0)
         {
-            if (HttpContext.Session.GetString(nameof(Idemployee)) != null)
+            if (HttpContext.Session.GetString("employeeID") != null)
             {
-                Idemployee = int.Parse(HttpContext.Session.GetString(nameof(Idemployee)));
+                Idemployee = int.Parse(HttpContext.Session.GetString("employeeID"));
                 var employee = _context.Employee.FirstOrDefault(a => a.Idemployee == Idemployee);
 
 
@@ -166,9 +166,9 @@ namespace FPSInventory.Controllers
         // GET: Supplier/Delete/5
         public async Task<IActionResult> Delete(int? id, int Idemployee = 0)
         {
-            if (HttpContext.Session.GetString(nameof(Idemployee)) != null)
+            if (HttpContext.Session.GetString("employeeID") != null)
             {
-                Idemployee = int.Parse(HttpContext.Session.GetString(nameof(Idemployee)));
+                Idemployee = int.Parse(HttpContext.Session.GetString("employeeID"));
                 var employee = _context.Employee.FirstOrDefault(a => a.Idemployee == Idemployee);
 
 

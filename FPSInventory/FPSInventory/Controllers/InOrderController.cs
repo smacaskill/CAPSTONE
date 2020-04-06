@@ -22,9 +22,9 @@ namespace FPSInventory.Controllers
         // GET: InOrder
         public async Task<IActionResult> Index(int Idemployee = 0)
         {
-            if (HttpContext.Session.GetString(nameof(Idemployee)) != null)
+            if (HttpContext.Session.GetString("employeeID") != null)
             {
-                Idemployee = int.Parse(HttpContext.Session.GetString(nameof(Idemployee)));
+                Idemployee = int.Parse(HttpContext.Session.GetString("employeeID"));
                 var employee = _context.Employee.FirstOrDefault(a => a.Idemployee == Idemployee);
 
             }
@@ -78,6 +78,7 @@ namespace FPSInventory.Controllers
             {
                 _context.Add(inOrder);
                 await _context.SaveChangesAsync();
+                HttpContext.Session.SetString("inOrderID", inOrder.IdinOrder.ToString());
                 return Redirect("/InItemOrder");
             }
             ViewData["IdEmployee"] = new SelectList(_context.Employee, "Idemployee", "Name", inOrder.IdEmployee);
@@ -146,9 +147,9 @@ namespace FPSInventory.Controllers
         // GET: InOrder/Delete/5
         public async Task<IActionResult> Delete(int? id, int Idemployee = 0)
         {
-            if (HttpContext.Session.GetString(nameof(Idemployee)) != null)
+            if (HttpContext.Session.GetString("employeeID") != null)
             {
-                Idemployee = int.Parse(HttpContext.Session.GetString(nameof(Idemployee)));
+                Idemployee = int.Parse(HttpContext.Session.GetString("employeeID"));
                 var employee = _context.Employee.FirstOrDefault(a => a.Idemployee == Idemployee);
 
 
