@@ -1,0 +1,135 @@
+INSERT INTO EMPLOYEE VALUES ('Stephen Banner', 'SBanner@inventory.com', 'M', 'ADMIN'),
+							('Martha Kent', 'MKent@inventory.com', 'F', 'USER'),
+							('Trish Bower', 'TBower@inventory.com', 'F', 'USER'),
+							('Sam Neilson', 'SNeilson@inventory.com', 'X', 'ADMIN')
+
+INSERT INTO CATEGORY VALUES ('Heavy Shoes'),
+							('Shirts'),
+							('Pants'),
+							('Shorts'),
+							('Ties'),
+							('Light Shoes')
+
+
+INSERT INTO PRODUCT VALUES ('Denizen Slim-Fit Jeans', 2002),
+							('Denizen Loose Jeans', 2002),
+							('Dickies Khaki pants', 2002),
+							('Converse All-Star Black', 2005),
+							('Skechers Athletic Sport', 2005),
+							('Yezzir Capri - Beige', 2002),
+							('Joe Fresh Cargo Shorts', 2003),
+							('Nike Basketball Shorts - Orange', 2003),
+							('Point Zero Fitted Solid Black', 2001),
+							('Point Zero Slim-Fit Plaid', 2001),
+							('Fruit of the Loom Fitted White T', 2001),
+							('Loose Denim Shorts - Large', 2003),
+							('Addidas Athletic Black T', 2001),
+							('Cotton/Wool Blend PJs', 2002)
+
+
+INSERT INTO CITY VALUES ('Kitchener', 'ON'),
+						('Waterloo', 'ON'),
+						('Cambridge', 'ON'),
+						('Waterloo', 'BC'),
+						('Calgary', 'AB'),
+						('Winnipeg', 'MB'),
+						('Montreal', 'QC')
+
+
+INSERT INTO STORE VALUES ('Westmount Mall', '547 Strange St', 1002),
+						('Eaton Centre', '47 Younge Ave', 1005),
+						('Laurelwood Commons', '224 Laurelwood', 1002),
+						('Dundas-King', '35 King St', 1003),
+						('Le Bibliotecha', '653 St. Pierre Sq', 1006)
+
+
+INSERT INTO SUPPLIER VALUES ('Addidas', 1001, '25 Fairview Cres'),
+							('Dickies', 1002, '84 King st'),
+							('Denizen', 1003, '432 Main St'),
+							('Point Zero', 1004, '745 Ottawa ave'),
+							('Converse', 1005, '99 Neverending Dr')
+
+
+INSERT INTO SHIPPING_COMPANY VALUES ('FedEx', '95 Worthing Dr', '(519) 555-8546', 1001),
+									('UPS', '435 Queen St', '(519) 555-4632', 1002),
+									('DHL', '956 Eastern Dr', '(519) 555-7542', 1003)
+
+
+INSERT INTO IN_ORDER VALUES (3000, 6000, 1, '2020/02/15'),
+							(3002, 6001, 2, '2020/02/10'),
+							(3002, 6002, 2, '2020/02/28'),
+							(3000, 6003, 1, '2020/02/01'),
+							(3002, 6004, 1, '2020/01/15'),
+							(3000, 6004, 2, '2020/01/18'),
+							(3002, 6000, 1, '2020/01/08')
+
+
+
+
+INSERT INTO IN_ITEM_ORDER VALUES (1, 5000, 125, 2.5),
+								(11, 5001, 225, 1.5),
+								(12, 5002, 325, 1.25),
+								(13, 5003, 425, 2.25),
+								(14, 5004, 525, 2.35),
+								(2, 5001, 225, 2.45),
+								(3, 5002, 250, 2.55),
+								(4, 5001, 45, 1.15),
+								(5, 5000, 85, 1.5),
+								(6, 5002, 95, 1.95),
+								(7, 5003, 250, 0.5),
+								(8, 5004, 225, 0.5),
+								(9, 5004, 425, 0.55),
+								(10, 5004, 125, 0.75),
+								(2, 5000, 125, 0.95),
+								(3, 5000, 145, 1.15),
+								(4, 5001, 195, 1.05),
+								(5, 5001, 325, 2.05),
+								(6, 5002, 80, 2.15),
+								(7, 5002, 100, 2.25),
+								(8, 5002, 48, 2.35),
+								(9, 5003, 99, 2.45),
+								(10, 5003, 453, 2.65),
+								(11, 5000, 246, 1.35),
+								(12, 5000, 142, 1.15),
+								(13, 5004, 125, 2.06),
+								(14, 5004, 225, 2.5),
+								(1, 5004, 325, 2.5)
+
+
+
+INSERT INTO OUT_ORDER VALUES (3000, 4000, 1, '2020/02/15'),
+							(3002, 4001, 2, '2020/02/10'),
+							(3002, 4002, 2, '2020/02/28'),
+							(3000, 4003, 1, '2020/02/01'),
+							(3002, 4004, 1, '2020/01/15'),
+							(3000, 4004, 2, '2020/01/18'),
+							(3002, 4000, 1, '2020/01/08')
+
+INSERT INTO OUT_ITEM_ORDER VALUES (10, 1, 7000, 25, 2.5),
+								(11,11, 7001, 25, 1.5),
+								(12,12, 7002, 25, 1.25),
+								(13,13, 7003, 25, 2.25),
+								(14,14, 7004, 25, 2.35),
+								(15,2, 7006, 25, 2.45),
+								(16,3, 7006, 50, 2.55),
+								(17,4, 7001, 5, 1.15),
+								(18,5, 7000, 5, 1.5),
+								(19,6, 7004, 5, 1.95),
+								(20,7, 7005, 50, 0.5),
+								(21,8, 7002, 25, 0.5),
+								(22,9, 7001, 25, 0.55),
+								(23,10, 7004, 25, 0.75),
+								(24,2, 7002, 25, 0.95),
+								(25,3, 7005, 45, 1.15),
+								(26,4, 7006, 95, 1.05),
+								(27,5, 7001, 25, 2.05),
+								(28,6, 7002, 8, 2.15),
+								(29,7, 7006, 10, 2.25),
+								(30,8, 7000, 8, 2.35),
+								(31,9, 7002, 9, 2.45),
+								(32,10, 7000, 45, 2.65),
+								(33,11, 7005, 46, 1.35),
+								(34,12, 7005, 42, 1.15),
+								(35,13, 7006, 25, 2.06),
+								(36,14, 7002, 25, 2.5),
+								(37,1, 7004, 25, 2.5)

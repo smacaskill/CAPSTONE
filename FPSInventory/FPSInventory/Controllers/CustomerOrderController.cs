@@ -94,6 +94,7 @@ namespace FPSInventory.Controllers
             {
                 _context.Add(customerOrder);
                 await _context.SaveChangesAsync();
+                return Redirect("/CustomerItem");
                 return RedirectToAction(nameof(Index));
             }
             ViewData["IdStore"] = new SelectList(_context.Store, "Idstore", "Namestore", customerOrder.IdStore);

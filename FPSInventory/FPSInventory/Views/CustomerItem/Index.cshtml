@@ -7,7 +7,7 @@
 <h1>Index</h1>
 <div class="line"></div>
 <p>
-    <a asp-action="Create">Create New</a>
+    <a asp-action="Create">Add Product to Order</a>
 </p>
 <table id="tableFPS">
     <thead>
@@ -19,10 +19,10 @@
                 @Html.DisplayNameFor(model => model.Price)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.IdCustomerOrderNavigation)
+                Customer Order #
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.IdProductNavigation)
+                Description
             </th>
             <th></th>
         </tr>

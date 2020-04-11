@@ -1,0 +1,13 @@
+Reviewed presentation slides
+
+Went over presentation video expectations, Sonam will email exact guidelines to assist.
+
+Went over latest changes to the project (updated login page to show user role, created an SQL script to insert fake data to tables)
+
+Reviewed Unit Test plan.
+
+Clarified deliverables for Iteration 3 (submitting later this evening).
+
+Clarified deliverables for Transition phase as well.
+
+Set next meeting date for April 17 at 5pm to review video presentation submission and Transition phase deliverables.

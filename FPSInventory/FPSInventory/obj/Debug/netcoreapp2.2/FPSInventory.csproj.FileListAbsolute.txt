@@ -533,3 +533,8 @@ C:\Users\SandersLP\Desktop\FPSInventory\FPSInventory\obj\Debug\netcoreapp2.2\Raz
 C:\Users\SandersLP\Desktop\FPSInventory\FPSInventory\obj\Debug\netcoreapp2.2\Razor\Views\Report\Stores.g.cshtml.cs
 C:\Users\SandersLP\Desktop\FPSInventory\FPSInventory\obj\Debug\netcoreapp2.2\Razor\Views\Report\Sales.g.cshtml.cs
 C:\Users\SandersLP\Desktop\FPSInventory\FPSInventory\obj\Debug\netcoreapp2.2\Razor\Views\Report\SalesByDate.g.cshtml.cs
+E:\CAPSTONE\FPSInventory\FPSInventory\obj\Debug\netcoreapp2.2\Razor\Views\Report\Index.g.cshtml.cs
+E:\CAPSTONE\FPSInventory\FPSInventory\obj\Debug\netcoreapp2.2\Razor\Views\Report\Sales.g.cshtml.cs
+E:\CAPSTONE\FPSInventory\FPSInventory\obj\Debug\netcoreapp2.2\Razor\Views\Report\SalesByDate.g.cshtml.cs
+E:\CAPSTONE\FPSInventory\FPSInventory\obj\Debug\netcoreapp2.2\Razor\Views\Report\Stores.g.cshtml.cs
+E:\CAPSTONE\FPSInventory\FPSInventory\obj\Debug\netcoreapp2.2\Razor\Views\StoreInventory\Index.g.cshtml.cs

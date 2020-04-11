@@ -35,6 +35,7 @@ namespace FPSInventory.Controllers
                 {
                     HttpContext.Session.SetString("employeeID", Idemployee.ToString());
                     HttpContext.Session.SetString("employeeName", employee.Name);
+                    HttpContext.Session.SetString("employeeRole", employee.Role);
                     TempData["Message"] = "Thank you " + employee.Name + " for logging in";
                     return Redirect("/Home");
                 }

@@ -33,7 +33,7 @@
         <hgroup>
             <h2><img src="~/images/iconlogo.png"> FPS Inventory</h2>
 
-            @{ViewData["emp"] = $"Welcome, {Context.Session.GetString("employeeName")}";
+            @{ViewData["emp"] = $"Welcome, {Context.Session.GetString("employeeName")} ({Context.Session.GetString("employeeRole")})";
             }
 
             <h3><button class="options">@ViewData["emp"]</button></h3>
@@ -116,7 +116,7 @@
                 @RenderBody()
             </main>
         </section>
-    <footer class="footer">
+    <footer>
         <div class="line"></div>
         <p>&copy; 2020 - FPSInventory - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a></p>
         <p><a title="RETURN TO TOP" href="#" class="go_up">TOP &uparrow;</a></p>
