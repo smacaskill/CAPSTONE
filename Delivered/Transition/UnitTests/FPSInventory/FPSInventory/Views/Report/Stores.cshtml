@@ -1,0 +1,46 @@
+﻿@model IEnumerable<FPSInventory.Models.Store>
+
+@{
+    ViewData["Title"] = "Select a Store to View Inventory";
+}
+
+<h1>@ViewData["Title"]</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="tableFPS">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Namestore)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Address)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IdCityNavigation)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Namestore)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Address)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.IdCityNavigation.Namecity)
+                </td>
+                <td>
+                    <a asp-controller="StoreInventory" asp-action="Index" asp-route-storeId="@item.Idstore">View Inventory</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

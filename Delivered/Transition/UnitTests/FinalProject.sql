@@ -1,0 +1,1 @@
+INSERT INTO EMPLOYEE (NAME, EMAIL, GENDER, ROLE) VALUES ('VICTOR', 'vitutivitu@gmail', 'M', 'admin');

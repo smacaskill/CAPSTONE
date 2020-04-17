@@ -1,0 +1,48 @@
+﻿@model IEnumerable<FPSInventory.Models.CustomerOrder>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+<div class="line"></div>
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table id="tableFPS">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Date)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IdStoreNavigation)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Date)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.IdStoreNavigation.Namestore)
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.IdcustomerOrder"
+                       class="btn btn-success btn-sm" role="button"
+                       title="Edit"><span class="glyphicon glyphicon-edit"></span></a>
+                    <a asp-action="Details" asp-controller="CustomerItem" asp-route-id="@item.IdcustomerOrder"
+                       class="btn btn-info btn-sm" role="button"
+                       title="Details"><span class="glyphicon glyphicon-folder-open"></span></a>
+                    <a asp-action="Delete" asp-route-id="@item.IdcustomerOrder"
+                       class="btn btn-danger btn-sm" role="button"
+                       title="Delete File"><span class="glyphicon glyphicon-trash"></span></a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

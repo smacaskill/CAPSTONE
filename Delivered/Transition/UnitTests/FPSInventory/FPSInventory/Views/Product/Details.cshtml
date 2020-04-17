@@ -1,0 +1,29 @@
+﻿@model FPSInventory.Models.Product
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+<div class="line"></div>
+<div>
+    <h4>Product</h4>
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Product1)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Product1)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.IdCategoryNavigation)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.IdCategoryNavigation.Namecategory)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.Idproduct" class="white">Edit</a> |
+    <a asp-action="Index" class="white">&leftarrow; Back to List</a>
+</div>

@@ -1,0 +1,59 @@
+﻿@model IEnumerable<FPSInventory.Models.Employee>
+
+@{
+    ViewData["Title"] = "List of Employees";
+}
+
+<h1>@ViewData["Title"]</h1>
+<div class="line"></div>
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table id="tableFPS">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Idemployee)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Email)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Role)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Idemployee)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Email)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Role)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Idemployee"
+                   class="btn btn-success btn-sm" role="button"
+                   title="Edit"><span class="glyphicon glyphicon-edit"></span></a>
+                <!--<a asp-action="Details" asp-route-id="@item.Idemployee"
+                   class="btn btn-info btn-sm" role="button"
+                   title="Details"><span class="glyphicon glyphicon-folder-open"></span></a>-->
+                <a asp-action="Delete" asp-route-id="@item.Idemployee"
+                   class="btn btn-danger btn-sm" role="button"
+                   title="Delete File"><span class="glyphicon glyphicon-trash"></span></a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

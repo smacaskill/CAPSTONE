@@ -1,0 +1,39 @@
+﻿@using Microsoft.AspNetCore.Http
+@model FPSInventory.Models.Employee
+
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+@if (Context.Session.GetString("employeeName") != null)
+{
+    <div>
+        <h1>ANNOUNCEMENTS</h1>
+        <div class="line"></div>
+        <p>Admins, a memo regarding the shipment for tomorrow (@DateTime.Now.AddDays(1).ToString("MMM dd yyyy")) has been sent. Please review when possible.</p>
+        <div class="line"></div>
+
+    </div>
+}
+else
+{
+    <h1>Login</h1>
+    <div>
+        <form asp-action="Index">
+            <div asp-validation-summary="All" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Idemployee" class="control-label"></label>
+                <input asp-for="Idemployee" class="form-control" />
+                <span asp-validation-for="Idemployee" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <input type="submit" value="Login" asp-controller="Employee" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+}
+
+    @*@section Scripts {
+            @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+        }*@

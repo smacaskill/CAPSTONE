@@ -1,0 +1,20 @@
+1.1, 1.3, 1.4, 1.5, 1.7 - Inception documentation - 10 hours
+2.3 - Database Review - 2 hour
+2.4 - Code for Add User Page - 12 hours
+2.5 - Code for additional pages - 16 hours
+2.5.1 - Product CRUD - 4 hour
+2.5.2 - Store CRUD - 1 hour
+2.5.3 - Supplier CRUD - 1 hour
+2.5.4 - City CRUD - 1 hour
+2.5.5 - Category CRUD - 2 hours
+2.5.6 - Shipping Company CRUD - 1 hour
+2.6 - Code Security Checks - 16 hours
+2.8 - Report Generation - 16 hours
+3.1 - Agile Iteration Plan - 1 hour
+3.5 - Use Case Descriptions x 2 - 1 hour
+5.4, 5.5, 5.6, 5.7, 5.9 - Code/Project demonstrations - 1 hour
+7.3 - User Guide - 4 hours
+
+Presentation Video - 1 hour
+
+Miscellaneous group organization/communication - 8 hours

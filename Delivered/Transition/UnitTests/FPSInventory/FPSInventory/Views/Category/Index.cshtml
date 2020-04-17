@@ -1,0 +1,41 @@
+﻿@model IEnumerable<FPSInventory.Models.Category>
+
+@{
+    ViewData["Title"] = "Categories on file";
+}
+
+<h1>@ViewData["Title"]</h1>
+<div class="line"></div>
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table id="tableFPS">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Namecategory)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                <a asp-action="Index" asp-controller="Product" asp-route-id="@item.Idcategory">
+                    @Html.DisplayFor(modelItem => item.Namecategory)
+                </a> 
+
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Idcategory"
+                   class="btn btn-success btn-sm" role="button"
+                   title="Edit"><span class="glyphicon glyphicon-edit"></span></a>
+                <a asp-action="Delete" asp-route-id="@item.Idcategory"
+                   class="btn btn-danger btn-sm" role="button"
+                   title="Delete File"><span class="glyphicon glyphicon-trash"></span></a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

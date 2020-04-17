@@ -1,0 +1,55 @@
+﻿@model IEnumerable<FPSInventory.Models.Product>
+
+@{
+    ViewData["Title"] = "All Products on File";
+}
+
+<h1>@ViewData["Title"]</h1>
+<div class="line"></div>
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<ul class="normal-ul">
+    <li><a asp-area="" asp-controller="Category" asp-action="Index">Categories</a></li>
+    <li><a asp-area="">Search</a></li>
+</ul>
+<table id="tableFPS">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Idproduct)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Product1)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IdCategoryNavigation)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Idproduct)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Product1)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.IdCategoryNavigation.Namecategory)
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.Idproduct"
+                       class="btn btn-success btn-sm" role="button"
+                       title="Edit"><span class="glyphicon glyphicon-edit"></span></a>
+                    <a asp-action="Delete" asp-route-id="@item.Idproduct"
+                       class="btn btn-danger btn-sm" role="button"
+                       title="Delete File"><span class="glyphicon glyphicon-trash"></span></a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

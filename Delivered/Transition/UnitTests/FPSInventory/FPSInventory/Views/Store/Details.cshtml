@@ -1,0 +1,35 @@
+﻿@model FPSInventory.Models.Store
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+<div class="line"></div>
+<div>
+    <h4>Store</h4>
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Namestore)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Namestore)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Address)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Address)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.IdCityNavigation)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.IdCityNavigation.Namecity)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.Idstore" class="white">Edit</a> |
+    <a asp-action="Index" class="white">&leftarrow; Back to List</a>
+</div>

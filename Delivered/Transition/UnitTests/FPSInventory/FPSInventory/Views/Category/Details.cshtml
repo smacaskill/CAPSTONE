@@ -1,0 +1,22 @@
+﻿@model FPSInventory.Models.Category
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+<div class="line"></div>
+<div>
+    <h4>Category</h4>
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Namecategory)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Namecategory)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Index" class="white">&leftarrow; Back to List</a>
+</div>
